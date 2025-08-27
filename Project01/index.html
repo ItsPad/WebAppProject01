@@ -22,10 +22,34 @@
         <img src="https://cdn-icons-png.flaticon.com/512/565/565375.png" type="image/png" alt="Cart" class="h-8 mr-4 cursor-pointer" />
       </div>
     </div>
+    
     <!-- Body -->
-    <div>
-      <img src="/Revuelto.jpg" alt="Revuelto" class="w-full h-96 object-cover mt-20 z-1" type="image/jpg" />
+    <div class="justify-center items-center relative w-full max-full mx-auto overflow-hidden mt-20">
+     <!-- Container ที่เก็บรูปทั้งหมด -->
+      <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+        <img src="https://www.beartai.com/wp-content/uploads/2021/05/6.gif" type="image/png"
+          class="min-w-full h-96 object-cover flex-shrink-0" alt="slide1">
+        <img
+          src="https://comicbook.com/wp-content/uploads/sites/4/2025/07/Demon-Slayer-Movie-Shinobu-Infinity-Castle-1.jpg"
+          type="image/png" class="min-w-full h-96 object-cover flex-shrink-0" alt="slide2">
+        <img
+          src="/Revuelto.jpg"
+          type="image/jpg" class="min-w-full h-96 object-cover flex-shrink-0" alt="slide2">
+
+      </div>
+      <button id="prevBtn"
+        class="absolute top-1/2 left-2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">
+        &#10094; <!-- ลูกศร < -->
+      </button>
+
+      <!-- ปุ่มขวา -->
+      <button id="nextBtn"
+        class="absolute top-1/2 right-2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">
+        &#10095; <!-- ลูกศร > -->
+      </button>
     </div>
+
+    <!-- section1 #region-->
     <div>
       <div class="relative -top-10 bg-white mx-20 rounded-lg shadow-lg z-10 grid grid-cols-4 gap-1 justify-center items-center text-black">
         <!-- items -->
@@ -60,9 +84,51 @@
             <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
           </div>
         </div>
-        
-        
       </div>
+    </div>
+    <!-- section1 #endregion-->
+    <!-- section2 #region -->
+    <div class="bg-white mx-10 rounded-sm shadow-md z-10 p-4 text-black h-[3000px]">
+      <!-- section2.1 Brand Partner  ใส่ได้มากกว่า6 -->
+      <div class="w-full mb-4 mt-20">
+        <div class="grid grid-cols-6 gap-4">
+          <!-- row1 -->
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_6@1.5x.png" type="image/png" alt="AEM" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_9_copy@1.5x.png" 
+            type="image/png" alt="ARP" class="mt-5 h-50 w-50 object-contain" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard-16@1.5x.jpg" 
+            type="image/png" alt="STNOW" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_15@1.5x.png" 
+            type="image/png" alt="INNOVA" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_9@1.5x.png" 
+            type="image/png" alt="DINAN" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_1@1.5x.png" 
+            type="image/png" alt="SPAL" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <!-- row1 -->
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_6@1.5x.png" type="image/png" alt="AEM" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_9_copy@1.5x.png" 
+            type="image/png" alt="ARP" class="mt-5 h-50 w-50 object-contain" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard-16@1.5x.jpg" 
+            type="image/png" alt="STNOW" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_15@1.5x.png" 
+            type="image/png" alt="INNOVA" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_9@1.5x.png" 
+            type="image/png" alt="DINAN" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+          <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_1@1.5x.png" 
+            type="image/png" alt="SPAL" class="mt-5 h-50 w-50 object-contain cursor-pointer" />
+            
+             
+        </div>
+      </div>
+      <hr class="border-gray-400 mt-20" />
+      <!-- section2.1 Promotion -->
+       <div class="w-full mt-20 flex flex-col justify-center items-center">
+        <div class="grid grid-cols-3 gap-1 ">
+          <img src="/promotion/promotion1.png" alt="Promotion1" class="w-[300px] h-[450px] object-cover cursor-pointer" type="image/jpg" />
+          <img src="/promotion/promotion2.png" alt="Promotion1" class="w-[300px] h-[450px] object-cover cursor-pointer" type="image/jpg" />
+          <img src="/promotion/promotion3.png" alt="Promotion1" class="w-[300px] h-[450px] object-cover cursor-pointer" type="image/jpg" />
+        </div>
+       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
