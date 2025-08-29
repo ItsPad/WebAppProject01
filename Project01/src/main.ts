@@ -26,3 +26,31 @@ function prevBtn() {
 document.getElementById('nextBtn')?.addEventListener('click', nextBtn);
 document.getElementById('prevBtn')?.addEventListener('click', prevBtn);
 //----------------------------------------------------------------
+//Catagory Slider
+const sliderCat = document.getElementById("categorySlider") as HTMLElement;
+const slidesCat = sliderCat.children;
+const totalSlidesCat = slidesCat.length;
+let indexCat = 0;
+
+function showSlideCat(i: number) {
+  const slideWidth = (slidesCat[0] as HTMLElement).offsetWidth + 16; // รวม gap-4 (16px)
+  sliderCat.style.transform = `translateX(${-i * slideWidth}px)`;
+}
+
+
+function nextBtnCat() {
+  indexCat = (indexCat + 1) % totalSlidesCat;
+  showSlideCat(indexCat);
+}
+
+function prevBtnCat() {
+  indexCat = (indexCat - 1 + totalSlidesCat) % totalSlidesCat;
+  showSlideCat(indexCat);
+
+}
+ setInterval(() => {
+    nextBtnCat();
+  }, 3000);
+
+document.getElementById('nextBtnCat')?.addEventListener('click', nextBtnCat);
+document.getElementById('prevBtnCat')?.addEventListener('click', prevBtnCat);
