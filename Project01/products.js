@@ -14,6 +14,10 @@ const CATS = [
   {
     "id": "turbo",
     "label": "เทอร์โบ"
+  },
+  {
+    "id": "exhaust",
+    "label": "ท่อไอเสีย"
   }
 ];
 const PRODUCTS = [
@@ -135,7 +139,7 @@ const PRODUCTS = [
       "assets/oil plate/GA/GA4.png",
       "assets/oil plate/GA/GA5.png"
     ],
-    "price": 1200
+    "price": 2200
   },
   {
     "id": 8,
@@ -150,7 +154,7 @@ const PRODUCTS = [
       "assets/oil plate/ZF/ZF4.png",
       "assets/oil plate/ZF/ZF5.png"
     ],
-    "price": 1200
+    "price": 2500
   },
   {
     "id": 9,
@@ -158,6 +162,22 @@ const PRODUCTS = [
     "cat": "turbo",
     "desc": "cummins turbo",
     "hero": "assets/turbo/Big Boss Cummins Stage 1 Turbo.png",
-    "price": 1200
+    "price": 35000
+  },
+  {
+    "id": 10,
+    "name": "DINAN FREE FLOW AXLE-BACK EXHAUST",
+    "cat": "exhaust",
+    "desc": "สำหรับ M2 2023-2024 G87 เพิ่มแรงม้า: + 6 HP, แรงบิด + 5 LB-FT ",
+    "hero": "assets/exhaust/DINAN VALVED M2.png",
+    "price": 150000
+  },
+  {
+    "id": 11,
+    "name": "DINAN FREE FLOW AXLE-BACK EXHAUST",
+    "cat": "exhaust",
+    "desc": "2020-2024 BMW M340I/M440I G20 เพิ่มแรงม้า: + 6 HP, แรงบิด + 5 LB-FT ",
+    "hero": "assets/exhaust/DINAN M340I.png",
+    "price": 120000
   }
 ];
