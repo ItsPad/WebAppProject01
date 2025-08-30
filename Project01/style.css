@@ -144,3 +144,12 @@ footer{border-top:1px solid var(--line);padding:18px;margin-top:28px;color:#888;
 .drawer-close:hover{ filter:brightness(.95); }
 @media (max-width:560px){ .drawer-close{ left:-14px; width:32px; height:32px; } }
 
+
+
+/* ทำให้ drawer เมนูซ้อนทับทุกอย่างแน่ ๆ */
+#menuDrawer{ z-index: 220; }               /* สูงกว่าทั้ง topbar/cart */
+#menuDrawer .panel{                         /* จากซ้ายแทนขวา */
+  right: auto; left: -420px;                /* ชิดซ้ายอยู่นอกจอ */
+  border-left: 0; border-right: 2px solid var(--red);
+}
+#menuDrawer.open .panel{ left: 0; }         /* เปิด = เลื่อนเข้ามา */

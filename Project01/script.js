@@ -300,3 +300,27 @@ qs('#yy').textContent = new Date().getFullYear();
 renderChips();
 renderGrid();
 renderCart();
+
+
+// Drawer เมนูซ้าย
+const menuDrawer = document.getElementById('menuDrawer');
+
+document.getElementById('openMenu')?.addEventListener('click', (e)=>{
+  e.preventDefault(); e.stopPropagation();                 // กันการคลิกไปโดน parent ที่ block ไว้
+  menuDrawer?.classList.add('open');
+});
+
+document.getElementById('menuMask')?.addEventListener('click', ()=>{
+  menuDrawer?.classList.remove('open');
+});
+document.getElementById('closeMenu')?.addEventListener('click', ()=>{
+  menuDrawer?.classList.remove('open');
+});
+
+// ปิดด้วย Esc
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') menuDrawer?.classList.remove('open');
+});
+
+
+
