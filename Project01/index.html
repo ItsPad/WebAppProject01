@@ -8,7 +8,7 @@
     <title>Modulie Turbo</title>
   </head>
   <body class="bg-gray-300">
-    <!-- Navigation Bar -->
+    <!--#region Navigation Bar -->
     <div class="fixed top-0 left-0 right-0 bg-white h-20 flex justify-between items-center z-20 shadow-md">
       <div class="inline-flex items-center cursor-pointer">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/800px-Hamburger_icon.svg.png" type="image/svg+png" alt="Menu" class="h-8 ml-4" />
@@ -19,10 +19,14 @@
       </div>
       <div class="inline-flex items-center">
         <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" type="image/png" alt="User" class="h-8 mr-4 cursor-pointer" />
-        <img src="https://cdn-icons-png.flaticon.com/512/565/565375.png" type="image/png" alt="Cart" class="h-8 mr-4 cursor-pointer" />
+        <div class="relative">
+          <img src="https://cdn-icons-png.flaticon.com/512/565/565375.png" type="image/png" alt="Cart" class="h-8 mr-4 cursor-pointer" />
+          <p id="amount_items" class="absolute -top-2 -right-0 bg-red-500 text-white text-xs w-5 h-5 flex justify-center items-center rounded-full">0</p>
+        </div>
+        
       </div>
     </div>
-    
+    <!--#endregion Navigationbar-->
     <!-- Body -->
     <div class="justify-center items-center relative w-full max-full mx-auto overflow-hidden mt-20">
      <!-- Container ที่เก็บรูปทั้งหมด -->
@@ -45,13 +49,13 @@
 
       </div>
       <button id="prevBtn"
-        class="absolute top-1/2 left-2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">
+        class="absolute top-1/2 left-2 -translate-y-1/2 bg-red-500 text-xl bg-opacity-50 text-white p-2 rounded-full">
         &#10094; <!-- ลูกศร < -->
       </button>
 
       <!-- ปุ่มขวา -->
       <button id="nextBtn"
-        class="absolute top-1/2 right-2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">
+        class="absolute top-1/2 right-2 -translate-y-1/2 bg-red-500 text-xl bg-opacity-50 text-white p-2 rounded-full">
         &#10095; <!-- ลูกศร > -->
       </button>
     </div>
@@ -63,28 +67,28 @@
     <div class="relative flex flex-col justify-between items-center bg-white h-[300px] p-2">
       <img src="https://siamultimateracing.com/upload-img/AEM/X-Series%20Collection/aem30-0300-800600-2.jpg" type="image/png" alt="Logo" class="w-full h-[120px] object-contain hover:scale-110 transform duration-300" />
       <h1 class="text-sm font-bold text-center mt-2">เกจวัด AF AEM X-Series Wideband UEGO AFR Gauge (30-0300)</h1>
-      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-white hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
+      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-red-500 hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
       <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Reccommend !</p>
     </div>
     <!-- items -->
     <div class="relative flex flex-col justify-between items-center bg-white h-[300px] p-2">
       <img src="https://siamultimateracing.com/upload-img/AEM/Tuner_Special_set/tunerset-a-2.jpg" type="image/jpg" alt="Logo" class="w-full h-[120px] object-contain hover:scale-110 transform duration-300" />
       <h1 class="text-sm font-bold text-center mt-2">เซตจูนเนอร์พื้นฐาน เกจวัด AEM X-Series 30-0300 + ไทม์มิ่งไลท์ Innova 3551+ ที่คีบปลายท่อ</h1>
-      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-white hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
+      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-red-500 hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
       <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Reccommend !</p>
     </div>
     <!-- items -->
     <div class="relative flex flex-col justify-between items-center bg-white h-[300px] p-2">
       <img src="https://siamultimateracing.com/upload-img/Holley%20MSD/Blaster%20SS%208207/MSDBLASTERSS800600.jpg" type="image/jpg" alt="Logo" class="w-full h-[120px] object-contain hover:scale-110 transform duration-300" />
       <h1 class="text-sm font-bold text-center mt-2">คอยล์ MSD Blaster SS</h1>
-      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-white hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
+      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-red-500 hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
       <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Reccommend !</p>
     </div>
     <!-- items -->
     <div class="relative flex flex-col justify-between items-center bg-white h-[300px] p-2">
       <img src="https://siamultimateracing.com/upload-img/SIMPSON_STILO/HELMET/Ghost_Bandit/ghostbandit-blk.jpg" type="image/jpg" alt="Logo" class="w-full h-[120px] object-contain hover:scale-110 transform duration-300" />
       <h1 class="text-sm font-bold text-center mt-2">หมวกกันน็อค Simpson Ghost Bandit สีดำ</h1>
-      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-white hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
+      <button class="w-28 h-10 bg-black text-white p-2 rounded-sm hover:bg-red-500 hover:text-black transition duration-300 ease-in-out mt-2">Order Now</button>
       <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Reccommend !</p>
     </div>
   </div>
@@ -139,48 +143,72 @@
       <div class="relative w-full max-w-xl mx-auto overflow-hidden mt-10 mb-10">
         <div id="categorySlider" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0);">
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/tuner-tool-2.jpg" alt="tuner-tool" class="h-[100px] w-[100px] object-contain cursor-pointer " />
-            <p>อุปกรณ์จูนเนอร์</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/tuner-tool-2.jpg" alt="tuner-tool" class="h-[100px] w-[100px] object-contain cursor-pointer " />
+              <p>อุปกรณ์จูนเนอร์</p>
+            </a>
+          </div>
+
+          <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/airfilter.jpg" alt="airfilter" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>กรองอากาศ</p>
+            </a>
+          </div>
+
+          <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/new-safetyequip.jpg" alt="safetyequip" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>ชุดเซฟตี้ แข่งขัน</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/airfilter.jpg" alt="airfilter" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>กรองอากาศ</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/Gauge.jpg" alt="gauge" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>เกจวัด</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/new-safetyequip.jpg" alt="safetyequip" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>ชุดเซฟตี้ แข่งขัน</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/Ignition.jpg" alt="Ignition" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>ระบบจุดระเบิด</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/Gauge.jpg" alt="gauge" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>เกจวัด</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/Performance-Chip.jpg" alt="ECU" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>กล่องECU กล่องจูน</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/Ignition.jpg" alt="Ignition" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>ระบบจุดระเบิด</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/fueldelivery.jpg" alt="fueldelivery" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>ระบบจ่ายเชื้อเพลิง</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/Performance-Chip.jpg" alt="ECU" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>กล่องECU กล่องจูน</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/New-Helmets.jpg" alt="New-Helmets" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>หมวกกันน็อค</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/fueldelivery.jpg" alt="fueldelivery" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>ระบบจ่ายเชื้อเพลิง</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/CD-Dash-1000x1000.jpg" alt="Digital-monitor" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>หน้าจอดิจิตอล</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/New-Helmets.jpg" alt="New-Helmets" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>หมวกกันน็อค</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/EVERGREEN/main-web-evg.jpg" alt="tools" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p class="truncate">กล่องอเนกประสงค์</p>
+            </a>
           </div>
           <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/CD-Dash-1000x1000.jpg" alt="Digital-monitor" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>หน้าจอดิจิตอล</p>
-          </div>
-          <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/EVERGREEN/main-web-evg.jpg" alt="tools" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p class="truncate">กล่องอเนกประสงค์</p>
-          </div>
-          <div class="flex flex-col justify-center items-center min-w-[120px] shadow-lg hover:scale-110 transform transition duration-300 ease-in-out">
-            <img src="https://siamultimateracing.com/upload-img/Home_banner/exhaust-main-banner800px.jpg" alt="ท่อไอเสีย" class="h-[100px] w-[100px] object-contain cursor-pointer" />
-            <p>ท่อไอเสีย</p>
+            <a href="product.html">
+              <img src="https://siamultimateracing.com/upload-img/Home_banner/exhaust-main-banner800px.jpg" alt="ท่อไอเสีย" class="h-[100px] w-[100px] object-contain cursor-pointer" />
+              <p>ท่อไอเสีย</p>
+            </a>
           </div>
         </div>
         <button id="prevBtnCat"
@@ -192,150 +220,186 @@
           &#10095;
         </button>
       </div>
-
-      <div class="grid grid-cols-4 gap-5">
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          <div class="flex flex-col relative justify-center items-center bg-white h-[300px] border-solid border-2 border-gray-300 shadow-md hover:scale-105 transform transition duration-300 ease-in-out">
-            <div class="w-[120px] h-[120px]">
-              <img src="/modulie_turbo_icon.png" type="image/png" alt="Logo" class="w-[120px] h-[120px]" />
-            </div>
-            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
-              <p class="min-h-[40px] truncate font-bold">Common Turbo</p>
-              <p>$1000</p>
-              <button class="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition duration-300 ease-in-out">Order Now</button>
-            </div>
-            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
-          </div>
-          
-         
-        </div>
-      </div>
+      <!--#endregion category-->
       
+      <!-- section2.2 อุปกรณ์จูนเนอร์ -->
+      <h1 class="text-2xl font-bold text-left mb-4 mx-10">อุปกรณ์จูนเนอร์</h1>
+      <div class="grid grid-cols-4 gap-5 mx-10">
+        <!-- items 1 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/AEM/X-Series%20Collection/aem30-0300-800600-2.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">เกจวัด AF AEM X-Series Wideband UEGO AFR Gauge (30-0300)</p>
+              <p class="opacity-0">.</p>
+              <p>9,500.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>
+        <!-- items 2 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/AEM/Tuner%20SET/AEM-settuner.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">เซตจูนเนอร์ เกจ AF AEM X-Series 30-0300+ ที่คีบปลายท่อสแตนเลส</p>
+              <p class="line-through text-red-400">13,900.00 บาท</p>
+              <p class="text-black">9,900.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+            <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
+          </div>        
+        <!-- items 3 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/AEM/Tuner_Special_set/tunerset-c-cover.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">เซตจูนเนอร์มืออาชีพ เกจวัด AEM X-Series + ดิจิตอล ไทม์มิ่งไลท์ รุ่นมืออาชีพ INNOVA 5568 + ที่คีบปลายท่อ</p>
+              <p class="line-through text-red-400">13,900.00 บาท</p>
+              <p class="text-black">9,900.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+            <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
+          </div>
+        <!-- items 4 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/AEM/Tuner_Special_set/tunerset-b-cover.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">เซตจูนเนอร์ เกจวัด AEM X-Series 30-0300 + ดิจิตอล ไทม์มิ่งไลท์ Innova 3568 + ที่คีบปลายท่อ</p>
+              <p class="line-through text-red-400">15,400.00 บาท</p>
+              <p class="text-black">14,700.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+            <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
+          </div>
+      </div>
+
+      <!-- section2.3 ระบบจุดระเบิด -->
+      <h1 class="text-2xl font-bold text-left mb-4 mt-20 mx-10">ระบบจุดระเบิด</h1>
+      <div class="grid grid-cols-4 gap-5 mx-10">
+        <!-- items 1 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/Holley%20MSD/Blaster%20SS%208207/MSDBLASTERSS800600.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">คอยล์ MSD Blaster SS</p>
+              <p class="opacity-0">.</p>
+              <p>4,000.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>
+        <!-- items 2 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/Holley%20MSD/Blaster2/800px.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">คอยล์ MSD Blaster 2 (45,000 Volts)</p>
+              <p class="opacity-0">.</p>
+              <p class="text-black">4,200.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>        
+        <!-- items 3 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/Holley%20MSD/MSD_Coil_8227/8227_01-800600.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">คอยล์ MSD Ford TFI</p>
+              <p class="opacity-0">.</p>
+              <p class="text-black">4,000.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>
+        <!-- items 4 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/Holley%20MSD/Blaster_K24_Coil/coilk24.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">คอยล์ MSD Blaster สำหรับ Honda K20 K24</p>
+              <p class="line-through text-red-400">13,500.00 บาท</p>
+              <p class="text-black">14,700.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+            <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
+          </div>
+      </div>
+      <!-- section2.3 อุปกรณ์เซฟตี้นักแข่ง -->
+       <h1 class="text-2xl font-bold text-left mb-4 mt-20 mx-10">อุปกรณ์เซฟตี้นักแข่ง</h1>
+      <div class="grid grid-cols-4 gap-5 mx-10">
+        <!-- items 1 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/RACEQUIP/Pro20_Helmet/Racequip-Pro20.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">หมวกกันน็อค RaceQuip Pro20 Full Face Helmet</p>
+              <p class="opacity-0">.</p>
+              <p>13,500.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>
+        <!-- items 2 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/SIMPSON/SA2020_Viper_Racing/7100001_01.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">หมวกกันน็อค SIMPSON SA2020 Viper Racing</p>
+              <p class="line-through text-red-400">25,700.00 บาท</p>
+              <p class="text-black">15,500.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>        
+        <!-- items 3 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/RACEQUIP/Pro20_Helmet/927690x9-primary1200900.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">หมวกกันน็อค RaceQuip Pro20 Carbon Full Face Helmet</p>
+              <p class="opacity-0">.</p>
+              <p class="text-black">25,000.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+          </div>
+        <!-- items 4 -->
+          <div class="flex flex-col relative justify-between items-center bg-white h-[300px] border-solid border-2 border-red-400 shadow-md">
+            <div class="w-[120px] h-[120px]">
+              <img src="https://siamultimateracing.com/upload-img/SIMPSON_STILO/HELMET/Ghost_Bandit/ghostbandit-blk.jpg" type="image/png" alt="Logo" class="w-[120px] h-[120px] object-contain hover:scale-110 transform duration-300" />
+            </div>
+            <div class="relative flex flex-col justify-center items-center mb-4 space-y-2">
+              <p class="min-h-[40px] font-bold line-clamp-2 text-center">หมวกกันน็อค Simpson Ghost Bandit สีดำ</p>
+              <p class="line-through text-red-400">24,000.00 บาท</p>
+              <p class="text-black">19,500.00 บาท</p>
+              <button class="bg-black text-white p-2 rounded hover:bg-red-500 hover:text-black transition duration-300 ease-in-out">Order Now</button>
+            </div>
+            <img src="https://cdn1.iconfinder.com/data/icons/material-core/18/search-256.png" type="image/png" alt="inspect" class="h-5 w-5 absolute top-2 right-2 cursor-pointer" />
+            <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
+          </div>
+      </div>
+
 
     </div>
-    <!--#endregion Reccommend items-->
-    
-
     <script type="module" src="/src/main.ts"></script>
     
   </body>
