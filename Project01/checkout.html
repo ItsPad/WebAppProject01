@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — Modulie Turbo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar glass">
+    <div class="wrap row">
+      <a href="product.html" class="brand" style="text-decoration:none">
+        <img class="brand-logo" src="assets/logo.png" alt="Modulie Turbo logo">
+        <div class="brand-text">Modulie <span class="accent">Turbo</span></div>
+      </a>
+      <div class="grow"></div>
+      <a class="chip small" href="product.html">กลับไปหน้าร้าน</a>
+      <a class="chip small" href="history.html">ประวัติการสั่งซื้อ</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="form">
+      <h2>ข้อมูลสำหรับจัดส่ง & ชำระเงิน</h2>
+      <div class="grid2">
+        <div>
+          <label>ชื่อ-นามสกุล</label>
+          <input id="name" placeholder="ชื่อจริง นามสกุล">
+        </div>
+        <div>
+          <label>เบอร์โทร</label>
+          <input id="phone" placeholder="081-xxx-xxxx">
+        </div>
+      </div>
+      <div>
+        <label>ที่อยู่จัดส่ง</label>
+        <textarea id="address" placeholder="บ้านเลขที่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์"></textarea>
+      </div>
+      <div class="grid2">
+        <div>
+          <label>ช่องทางการชำระเงิน</label>
+          <select id="payment">
+            <option value="ธนาคาร">โอนผ่านธนาคาร</option>
+            <option value="พร้อมเพย์">พร้อมเพย์</option>
+          </select>
+        </div>
+        <div>
+          <label>หมายเหตุ (ถ้ามี)</label>
+          <input id="note" placeholder="เช่น ออกใบกำกับภาษี">
+        </div>
+      </div>
+
+      <div id="payInfo" class="form" style="margin:16px 0 8px 0">
+        <h3>บัญชีผู้รับเงิน (ตัวอย่าง แก้ไขได้)</h3>
+        <div id="bankInfo">
+          ชื่อบัญชี: <b>Modulie Turbo Co., Ltd.</b><br>
+          ธนาคารกสิกรไทย <b>123-4-56789-0</b><br>
+          สาขา: เซ็นทรัลแจ้งวัฒนะ
+        </div>
+        <div id="ppInfo" style="display:none">
+          พร้อมเพย์ (เบอร์โทร): <b>080-000-0000</b><br>
+          ชื่อบัญชี: <b>Modulie Turbo Co., Ltd.</b>
+        </div>
+        <small class="muted">* แก้ไขเลขที่บัญชี/พร้อมเพย์ได้ในไฟล์ <code>checkout.html</code> หรือปรับด้วย JS ใน <code>checkout.js</code></small>
+      </div>
+
+      <h3>สรุปรายการ</h3>
+      <table class="table" id="summary">
+        <thead><tr><th>สินค้า</th><th>ตัวเลือก</th><th>จำนวน</th><th>ราคา/หน่วย</th><th>รวม</th></tr></thead>
+        <tbody></tbody>
+        <tfoot><tr><th colspan="4" style="text-align:right">ยอดรวม</th><th id="grand">฿0.00</th></tr></tfoot>
+      </table>
+
+      <div class="actions">
+        <a class="btn ghost" href="product.html">ย้อนกลับ</a>
+        <button class="btn primary" id="placeOrder">ยืนยันสั่งซื้อ</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>© <span id="yy"></span> Modulie Turbo</footer>
+  <script src="checkout.js"></script>
+</body>
+</html>

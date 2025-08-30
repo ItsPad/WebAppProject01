@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modulie Turbo — Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar glass">
+    <div class="wrap row">
+      <a href="product.html" class="brand" style="text-decoration:none">
+        <img class="brand-logo" src="assets/logo.png" alt="Modulie Turbo logo">
+        <div class="brand-text">Modulie <span class="accent">Turbo</span></div>
+      </a>
+      <nav class="nav">
+        <a class="chip small active" href="index.html">หน้าแรก</a>
+        <a class="chip small" href="history.html">ประวัติการสั่งซื้อ</a>
+      </nav>
+      <div class="grow"></div>
+      <button class="cart-btn" id="openCart">
+        ตะกร้า <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Modulie Turbo</h1>
+        <p>ปลั๊กหัวเทียนแท้คุณภาพ เทอร์โบรถยนต์ อ่างน้ำมันเกียร์ราคาถูก</p>
+        <div class="chips" id="chips"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>สินค้าแนะนำ</h2>
+        <a class="chip small" href="history.html">ดูประวัติการสั่งซื้อ</a>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <!-- Detail Modal + Drawer exactly as before -->
+  <dialog id="detail">
+    <form method="dialog" class="dialog-form">
+      <button class="close-x" aria-label="close">×</button>
+      <div class="modal">
+        <div class="left">
+          <div class="thumb large"><img id="dImg" alt=""></div>
+          <div class="variant-note" id="variantNote"></div>
+        </div>
+        <div class="right">
+          <div class="pill" id="dCat">หมวดหมู่</div>
+          <h3 id="dTitle">ชื่อสินค้า</h3>
+          <p id="dDesc" class="muted">รายละเอียดสินค้าแบบย่อ…</p>
+          <div class="variant">
+            <div class="variant-label">ตัวเลือก:</div>
+            <div class="variant-box" id="dVariants"></div>
+          </div>
+          <div class="price-line">
+            <div class="price" id="dPrice">฿0.00</div>
+            <div class="qty">
+              <label for="dQty">จำนวน</label>
+              <div class="qty-ctrl">
+                <button type="button" id="minus">−</button>
+                <input type="number" id="dQty" min="1" value="1" />
+                <button type="button" id="plus">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn ghost" value="cancel">ยกเลิก</button>
+            <button class="btn primary" id="dAdd" value="default">เพิ่มลงตะกร้า</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="drawer" id="drawer">
+    <div class="mask" id="mask"></div>
+    <aside class="panel">
+      <div class="panel-head">
+        <h3>ตะกร้าสินค้า</h3>
+        <button class="btn tiny ghost" id="clearCart">ล้างตะกร้า</button>
+      </div>
+      <div class="cart-list" id="cartList"></div>
+      <div class="cart-footer glass">
+        <div class="coupon">
+            <input id="couponCode" placeholder="ใส่โค้ดส่วนลด (เช่น MOD10)" />
+            <button class="apply" id="applyCoupon">ใช้โค้ด</button>
+            <div class="muted" id="couponMsg"></div>
+          </div>
+          <!-- เดิม -->
+          <div class="total"><span></span><span id="grand">฿0.00</span></div>
+          <a class="checkout" id="goCheckout">ดำเนินการสั่งซื้อ</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>© <span id="yy"></span> Modulie Turbo</footer>
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
