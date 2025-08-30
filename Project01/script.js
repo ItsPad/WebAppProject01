@@ -321,6 +321,3 @@ document.getElementById('closeMenu')?.addEventListener('click', ()=>{
 document.addEventListener('keydown', (e)=>{
   if(e.key === 'Escape') menuDrawer?.classList.remove('open');
 });
-
-
-
