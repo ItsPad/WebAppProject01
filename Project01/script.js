@@ -265,6 +265,8 @@ function renderCart(){
 const drawer = qs('#drawer');
 qs('#openCart')?.addEventListener('click', ()=> drawer.classList.add('open'));
 qs('#mask')?.addEventListener('click', ()=> drawer.classList.remove('open'));
+qs('#mask')?.addEventListener('click', ()=> drawer.classList.remove('open'));
+qs('#closeCart')?.addEventListener('click', ()=> drawer.classList.remove('open'));
 qs('#clearCart')?.addEventListener('click', clearCart);
 const applyBtn = qs('#applyCoupon');
 const codeInput = qs('#couponCode');
