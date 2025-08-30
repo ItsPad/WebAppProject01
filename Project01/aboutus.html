@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://static.thenounproject.com/png/2051816-200.png" type="image/png">
+  <title>About Us | Modulie Turbo</title>
+
+  <!-- Drawer basic styles (เมนูซ้าย + ตะกร้าขวา) -->
+  <style>
+    /* base drawer */
+    .drawer{position:fixed; inset:0; pointer-events:none; z-index:200;}
+    .drawer .mask{position:absolute; inset:0; background:rgba(0,0,0,.4); opacity:0; transition:opacity .25s;}
+    .drawer.open{pointer-events:auto;}
+    .drawer.open .mask{opacity:1;}
+
+    /* menu (left) */
+    #menuDrawer .panel{
+      position:absolute; top:0; left:-320px; width:280px; max-width:88vw; height:100%;
+      background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.25); transition:left .25s;
+      display:flex; flex-direction:column;
+    }
+    #menuDrawer.open .panel{ left:0; }
+
+    /* cart (right) */
+    #drawer .panel{
+      position:absolute; top:0; right:-420px; left:auto; width:360px; max-width:90vw; height:100%;
+      background:#fff; box-shadow:-4px 0 20px rgba(0,0,0,.2); transition:right .25s ease;
+      display:flex; flex-direction:column;
+    }
+    #drawer.open .panel{ right:0; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 right-0 bg-white h-20 z-30 shadow-md">
+    <div class="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <!-- Left: MENU trigger -->
+      <div id="openMenu" class="inline-flex items-center cursor-pointer select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/800px-Hamburger_icon.svg.png" alt="Menu" class="h-8" />
+        <p class="ml-2 font-bold tracking-wide">MENU</p>
+      </div>
+
+      <!-- Center: Logo -->
+      <a href="index.html" class="flex items-center">
+        <img src="public/modulie_turbo_icon.png" alt="Logo" class="h-12 w-12 object-contain" />
+        <span class="ml-2 font-extrabold text-lg hidden sm:inline">Modulie Turbo</span>
+      </a>
+
+      <!-- Right: User/Cart -->
+      <div class="inline-flex items-center">
+        <img id="openCart" src="https://cdn-icons-png.flaticon.com/512/565/565375.png" alt="Cart" class="h-8 mr-1 cursor-pointer" />
+      </div>
+    </div>
+  </header>
+  <div class="h-20"></div>
+
+  <!-- ================= HERO / PAGE TITLE ================= -->
+  <section class="bg-white border-y">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <h1 class="text-3xl font-extrabold">เกี่ยวกับเรา</h1>
+      <p class="text-gray-600 mt-2">รู้จัก Modulie Turbo ให้มากขึ้น—เราหายใจเข้าออกเป็น “สมรรถนะ” และ “ความจริงใจ”</p>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT CONTENT ================= -->
+  <main class="max-w-7xl mx-auto px-4 py-10 space-y-10">
+    <!-- Mission / What we do -->
+    <section class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold">เราคือใคร</h2>
+        <p class="mt-3 leading-7">
+          Modulie Turbo คือร้านค้าออนไลน์ด้านอุปกรณ์เพิ่มสมรรถนะรถยนต์และมอเตอร์สปอร์ต
+          เราคัดสรรสินค้าแท้จากแบรนด์ชั้นนำ พร้อมทีมให้คำปรึกษาด้านเทคนิคตั้งแต่เลือกอุปกรณ์ไปจนถึงการใช้งานจริง
+        </p>
+        <ul class="list-disc pl-5 mt-4 space-y-1">
+          <li>สินค้าแท้รับประกัน พร้อมใบเสร็จถูกต้อง</li>
+          <li>ให้คำแนะนำอย่างเป็นกลาง เลือกของ “ที่ใช่” สำหรับรถของคุณ</li>
+          <li>ระบบสั่งซื้อ/ติดตามออเดอร์โปร่งใส</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold">วิสัยทัศน์</h2>
+        <p class="mt-3 leading-7">
+          ทำให้การอัปเกรดสมรรถนะเป็นเรื่องง่าย น่าเชื่อถือ และเข้าถึงได้สำหรับทุกคน
+          ด้วยคอนเทนต์ความรู้ที่เข้าใจง่าย บริการลูกค้าที่จริงใจ และมาตรฐานการจัดส่งที่รวดเร็วปลอดภัย
+        </p>
+        <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+          <div class="p-3 rounded border">
+            <div class="text-2xl font-extrabold text-red-600">100%</div>
+            <div class="text-sm text-gray-600">สินค้าแท้</div>
+          </div>
+          <div class="p-3 rounded border">
+            <div class="text-2xl font-extrabold text-red-600">48 ชม.</div>
+            <div class="text-sm text-gray-600">จัดส่งภายใน</div>
+          </div>
+          <div class="p-3 rounded border">
+            <div class="text-2xl font-extrabold text-red-600">4.9/5</div>
+            <div class="text-sm text-gray-600">ความพึงพอใจ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline / History -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-bold">ประวัติความเป็นมา</h2>
+      <div class="mt-6 relative">
+        <div class="absolute left-3 top-0 bottom-0 w-1 bg-red-100"></div>
+        <div class="space-y-6">
+          <div class="relative pl-10">
+            <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-red-600"></div>
+            <h3 class="font-bold">ก่อตั้งร้าน (2018)</h3>
+            <p class="text-gray-600">เริ่มจากกลุ่มคนรักการแต่งรถ ที่อยากสร้างที่พึ่งทางเทคนิคให้กับทุกสายซิ่ง</p>
+          </div>
+          <div class="relative pl-10">
+            <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-red-600"></div>
+            <h3 class="font-bold">เปิดออนไลน์เต็มรูปแบบ (2020)</h3>
+            <p class="text-gray-600">ยกทั้งแคตตาล็อกขึ้นเว็บ พร้อมระบบสั่งซื้อ/ชำระ/ติดตามสถานะ</p>
+          </div>
+          <div class="relative pl-10">
+            <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-red-600"></div>
+            <h3 class="font-bold">ขยายพาร์ทเนอร์ (2022)</h3>
+            <p class="text-gray-600">จับมือผู้แทนจำหน่ายแบรนด์ชั้นนำ เพิ่มความหลากหลายของสินค้า</p>
+          </div>
+          <div class="relative pl-10">
+            <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-red-600"></div>
+            <h3 class="font-bold">วันนี้และอนาคต</h3>
+            <p class="text-gray-600">เดินหน้าพัฒนาประสบการณ์ลูกค้าให้ดียิ่งขึ้น ทั้งคอนเทนต์และบริการหลังการขาย</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-bold">ติดต่อเรา</h2>
+      <div class="grid md:grid-cols-2 gap-8 mt-4">
+        <div class="space-y-3">
+          <p><span class="font-semibold">อีเมล:</span> support@modulie-turbo.example</p>
+          <p><span class="font-semibold">โทร:</span> 08x-xxx-xxxx</p>
+          <p><span class="font-semibold">LINE:</span> @modulieturbo</p>
+          <p><span class="font-semibold">Facebook:</span> fb.com/modulieturbo</p>
+          <p><span class="font-semibold">ที่อยู่:</span> 123/45 ถนนสมรรถนะ เขตสปีดซิตี้ กรุงเทพฯ 10xxx</p>
+          <div class="text-sm text-gray-500">*แก้ไขข้อมูลการติดต่อให้ตรงธุรกิจจริงของคุณได้เลย</div>
+        </div>
+        <form class="space-y-3">
+          <div>
+            <label class="text-sm">ชื่อ</label>
+            <input type="text" class="mt-1 w-full border rounded px-3 py-2" placeholder="ชื่อของคุณ">
+          </div>
+          <div>
+            <label class="text-sm">อีเมล</label>
+            <input type="email" class="mt-1 w-full border rounded px-3 py-2" placeholder="you@example.com">
+          </div>
+          <div>
+            <label class="text-sm">ข้อความ</label>
+            <textarea rows="4" class="mt-1 w-full border rounded px-3 py-2" placeholder="ต้องการสอบถามอะไร…"></textarea>
+          </div>
+          <button type="button" class="px-4 py-2 bg-black text-white rounded hover:bg-white hover:text-black border border-black transition">ส่งข้อความ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t bg-white mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-sm text-gray-600">
+      © <span id="yy"></span> Modulie Turbo. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ================= DRAWER: MENU (LEFT) ================= -->
+  <div class="drawer" id="menuDrawer" aria-hidden="true">
+    <div class="mask" id="menuMask"></div>
+    <aside class="panel">
+      <div class="px-4 py-3 border-b flex items-center justify-between">
+        <h3 class="font-extrabold">เมนู</h3>
+        <button class="text-white bg-red-600 hover:bg-red-700 rounded-full w-8 h-8" id="closeMenu">✕</button>
+      </div>
+      <nav class="p-4 flex flex-col gap-2">
+        <a href="index.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">หน้าแรก</a>
+        <a href="product.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">สินค้า</a>
+        <a href="history.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">ประวัติการสั่งซื้อ</a>
+        <a href="aboutus.html" class="px-3 py-2 rounded border bg-red-50 border-red-500 font-semibold">เกี่ยวกับเรา</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ================= DRAWER: CART (RIGHT, optional) ================= -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="mask" id="mask"></div>
+    <aside class="panel">
+      <div class="px-4 py-3 border-b flex items-center justify-between">
+        <h3 class="font-extrabold">ตะกร้าสินค้า</h3>
+        <button class="text-white bg-red-600 hover:bg-red-700 rounded-full w-8 h-8" id="closeCart">✕</button>
+      </div>
+
+      <div id="cartList" class="p-4 flex flex-col gap-3"></div>
+
+      <div class="p-4 border-t space-y-2">
+        <div class="coupon flex gap-2">
+          <input id="couponCode" class="flex-1 border rounded px-3 py-2" placeholder="ใส่โค้ดส่วนลด (เช่น MOD10)" />
+          <button class="px-3 py-2 rounded bg-red-600 text-white" id="applyCoupon">ใช้โค้ด</button>
+        </div>
+        <div id="couponMsg" class="text-sm text-gray-600"></div>
+
+        <div class="flex justify-between font-semibold">
+          <span>ยอดรวมสุทธิ</span>
+          <span id="grand">฿0.00</span>
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button class="px-3 py-2 border rounded w-full" id="clearCart">ล้างตะกร้า</button>
+          <a class="px-3 py-2 bg-black text-white rounded w-full text-center" id="goCheckout" href="checkout.html">เช็กเอาต์</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // Year
+    document.getElementById('yy').textContent = new Date().getFullYear();
+
+    /* ===== Slide Menu Left ===== */
+    const menuDrawer = document.getElementById('menuDrawer');
+    document.getElementById('openMenu')?.addEventListener('click', ()=>{
+      menuDrawer?.classList.add('open');
+      menuDrawer?.setAttribute('aria-hidden','false');
+    });
+    document.getElementById('menuMask')?.addEventListener('click', ()=>{
+      menuDrawer?.classList.remove('open');
+      menuDrawer?.setAttribute('aria-hidden','true');
+    });
+    document.getElementById('closeMenu')?.addEventListener('click', ()=>{
+      menuDrawer?.classList.remove('open');
+      menuDrawer?.setAttribute('aria-hidden','true');
+    });
+    document.addEventListener('keydown',(e)=>{
+      if(e.key==='Escape') menuDrawer?.classList.remove('open');
+    });
+
+    /* ===== Cart (shared via localStorage) – simplified to view only ===== */
+    const qs = s => document.querySelector(s);
+    const baht = n => '฿' + (Number(n)||0).toLocaleString('th-TH',{minimumFractionDigits:2,maximumFractionDigits:2});
+    let cart = JSON.parse(localStorage.getItem('cart.modulie') || '[]');
+    let coupon = JSON.parse(localStorage.getItem('coupon.modulie') || 'null');
+    const COUPONS = { MOD10:{type:'percent',value:10,note:'ลด 10%'}, SAVE100:{type:'amount',value:100,note:'ลด 100.-'} };
+    const setCoupon = c => { coupon=c; localStorage.setItem('coupon.modulie', JSON.stringify(c)); };
+    const clearCoupon = () => { coupon=null; localStorage.removeItem('coupon.modulie'); };
+    const findCoupon = code => { if(!code) return null; const k=code.trim().toUpperCase(); return COUPONS[k]?{code:k,...COUPONS[k]}:null; };
+    const calcDiscount = subtotal => !coupon ? 0 : coupon.type==='percent' ? Math.round(subtotal * coupon.value)/100 : coupon.type==='amount' ? coupon.value : 0;
+
+    function renderCart(){
+      const list = qs('#cartList'); if(!list) return;
+      list.innerHTML='';
+      let subtotal = 0;
+      if(cart.length===0){
+        list.innerHTML = '<div class="text-gray-500">ยังไม่มีสินค้าในตะกร้า</div>';
+      }else{
+        cart.forEach(row=>{
+          const line = (row.price||0)*row.qty; subtotal += line;
+          const item = document.createElement('div');
+          item.className = 'flex gap-3 items-center';
+          item.innerHTML = `
+            <div class="w-16 h-16 border rounded overflow-hidden"><img src="${row.img||''}" class="w-full h-full object-contain"></div>
+            <div>
+              <div class="font-semibold">${row.name||'สินค้า'}</div>
+              <div class="text-sm text-gray-500">${row.variantId||''}</div>
+              <div class="text-sm text-gray-600">${baht(row.price)} × ${row.qty} = <span class="font-semibold">${baht(line)}</span></div>
+            </div>
+          `;
+          list.appendChild(item);
+        });
+      }
+      const discount = Math.min(calcDiscount(subtotal), subtotal);
+      const grand = Math.max(subtotal - discount, 0);
+      qs('#grand') && (qs('#grand').textContent = baht(grand));
+      const msg = qs('#couponMsg');
+      if (msg) msg.textContent = coupon?.code ? `ใช้โค้ด ${coupon.code} — ${coupon.note} (-${baht(discount)})` : '';
+      localStorage.setItem('cart.subtotal', String(subtotal));
+      localStorage.setItem('cart.discount', String(discount));
+    }
+
+    // เปิด/ปิดตะกร้า (ขวา)
+    const cartDrawer = document.getElementById('drawer');
+    document.getElementById('openCart')?.addEventListener('click', ()=>{
+      cartDrawer?.classList.add('open');
+      cartDrawer?.setAttribute('aria-hidden','false');
+      renderCart();
+    });
+    document.getElementById('mask')?.addEventListener('click', ()=>{
+      cartDrawer?.classList.remove('open');
+      cartDrawer?.setAttribute('aria-hidden','true');
+    });
+    document.getElementById('closeCart')?.addEventListener('click', ()=>{
+      cartDrawer?.classList.remove('open');
+      cartDrawer?.setAttribute('aria-hidden','true');
+    });
+
+    // คูปองในหน้า about
+    document.getElementById('applyCoupon')?.addEventListener('click', ()=>{
+      const code = (document.getElementById('couponCode')?.value||'').trim();
+      const c = findCoupon(code);
+      if(!c){ clearCoupon(); const m=qs('#couponMsg'); if(m) m.textContent='โค้ดไม่ถูกต้อง'; }
+      else{ setCoupon(c); }
+      renderCart();
+    });
+    document.getElementById('clearCart')?.addEventListener('click', ()=>{
+      cart = []; localStorage.setItem('cart.modulie','[]'); renderCart();
+    });
+
+    // init
+    renderCart();
+  </script>
+</body>
+</html>

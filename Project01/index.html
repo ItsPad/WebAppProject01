@@ -32,7 +32,6 @@
         display: flex;
         flex-direction: column;
       }
-
       #drawer.open .panel {
         right: 0;             /* เลื่อนเข้ามาเต็ม */
       }
@@ -60,35 +59,10 @@
             src="https://cdn-icons-png.flaticon.com/512/565/565375.png"
             alt="Cart" class="h-8 mr-4 cursor-pointer" />
       </div>
-
-
-
       </div>
     </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- top spacing -->
     <div class="h-20"></div>
-
     <!-- ================= HERO SLIDER ================= -->
     <section class="relative w-full max-w-7xl mx-auto overflow-hidden">
       <div id="slider" class="flex transition-transform duration-500 ease-in-out">
@@ -98,64 +72,15 @@
         <img src="public/carteaser/8.jpg" class="min-w-full h-96 object-cover flex-shrink-0" alt="slide4">
         <img src="public/carteaser/11.jpg" class="min-w-full h-96 object-cover flex-shrink-0" alt="slide5">
       </div>
-
-
-
-
-
       <button id="prevBtn"
         class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">&#10094;</button>
       <button id="nextBtn"
         class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">&#10095;</button>
     </section>
-
-
-
     <!-- ================= SECTION 1: Recommended grid ================= -->
-    <section class="relative -top-10 max-w-7xl mx-auto">
-      <div class="bg-white rounded-lg shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 text-black">
-        <!-- item -->
-        <div class="relative flex flex-col items-center bg-white h-[300px] p-2">
-          <img src="https://siamultimateracing.com/upload-img/AEM/X-Series%20Collection/aem30-0300-800600-2.jpg"
-               alt="AEM X-Series" class="w-full h-[120px] object-contain hover:scale-110 duration-300" />
-          <h1 class="text-sm font-bold text-center mt-2">
-            เกจวัด AF AEM X-Series Wideband UEGO AFR Gauge (30-0300)
-          </h1>
-          <button class="w-28 h-10 bg-black text-white rounded-sm hover:bg-white hover:text-black border border-black transition mt-2">Order Now</button>
-          <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Recommend!</p>
-        </div>
-
-        <!-- item -->
-        <div class="relative flex flex-col items-center bg-white h-[300px] p-2">
-          <img src="https://siamultimateracing.com/upload-img/AEM/Tuner_Special_set/tunerset-a-2.jpg"
-               alt="Tuner Set" class="w-full h-[120px] object-contain hover:scale-110 duration-300" />
-          <h1 class="text-sm font-bold text-center mt-2">
-            เซตจูนเนอร์พื้นฐาน AEM X-Series + Innova 3551 + ที่คีบปลายท่อ
-          </h1>
-          <button class="w-28 h-10 bg-black text-white rounded-sm hover:bg-white hover:text-black border border-black transition mt-2">Order Now</button>
-          <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Recommend!</p>
-        </div>
-
-        <!-- item -->
-        <div class="relative flex flex-col items-center bg-white h-[300px] p-2">
-          <img src="https://siamultimateracing.com/upload-img/Holley%20MSD/Blaster%20SS%208207/MSDBLASTERSS800600.jpg"
-               alt="MSD Blaster SS" class="w-full h-[120px] object-contain hover:scale-110 duration-300" />
-          <h1 class="text-sm font-bold text-center mt-2">คอยล์ MSD Blaster SS</h1>
-          <button class="w-28 h-10 bg-black text-white rounded-sm hover:bg-white hover:text-black border border-black transition mt-2">Order Now</button>
-          <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Recommend!</p>
-        </div>
-
-        <!-- item -->
-        <div class="relative flex flex-col items-center bg-white h-[300px] p-2">
-          <img src="https://siamultimateracing.com/upload-img/SIMPSON_STILO/HELMET/Ghost_Bandit/ghostbandit-blk.jpg"
-               alt="Simpson Ghost Bandit" class="w-full h-[120px] object-contain hover:scale-110 duration-300" />
-          <h1 class="text-sm font-bold text-center mt-2">หมวกกันน็อค Simpson Ghost Bandit สีดำ</h1>
-          <button class="w-28 h-10 bg-black text-white rounded-sm hover:bg-white hover:text-black border border-black transition mt-2">Order Now</button>
-          <p class="absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br">Recommend!</p>
-        </div>
-      </div>
+    <section class="relative mt-5 pb-5 max-w-7xl mx-auto">
+      <div id="recGrid" class="bg-white rounded-lg shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 text-black"></div>
     </section>
-
     <!-- ================= SECTION 2 ================= -->
     <section class="bg-white max-w-7xl mx-auto rounded-sm shadow-md p-4 text-black">
       <!-- Brand partners -->
@@ -173,12 +98,8 @@
           <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_14@1.5x.png" alt="Walbro" class="h-20 object-contain cursor-pointer" />
           <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_12@1.5x.png" alt="SIMPSON" class="h-20 object-contain cursor-pointer" />
           <img src="https://siamultimateracing.com/upload-img/BRAND_LOGO/Artboard_7@1.5x.png" alt="RaceQuip" class="h-20 object-contain cursor-pointer" />
-
-
-
         </div>
       </div>
-
       <hr class="border-gray-300 my-10" />
 
       <!-- Promotions -->
@@ -189,7 +110,6 @@
           <img src="public/promotion/promotion3.png" alt="Promotion3" class="w-[300px] h-[450px] object-cover cursor-pointer" />
         </div>
       </div>
-
       <hr class="border-gray-300 my-10" />
 
       <!-- Category slider -->
@@ -243,14 +163,9 @@
         </div>
         <button id="prevBtnCat"
           class="absolute top-1/2 left-0 -translate-y-1/2 bg-red-500/80 text-white p-3 rounded-full">&#10094;</button>
-
-
         <button id="nextBtnCat"
           class="absolute top-1/2 right-0 -translate-y-1/2 bg-red-500/80 text-white p-3 rounded-full">&#10095;</button>
-
-
       </div>
-
     <!-- ================= DRAWER MENU (เหมือนตะกร้า) ================= -->
     <div class="drawer" id="menuDrawer" aria-hidden="true">
       <div class="mask" id="menuMask"></div>
@@ -263,6 +178,7 @@
           <a href="index.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">หน้าแรก</a>
           <a href="product.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">สินค้าทั้งหมด</a>
           <a href="history.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">ประวัติการสั่งซื้อ</a>
+          <a href="aboutus.html" class="px-3 py-2 rounded border hover:bg-red-50 hover:border-red-500 font-semibold">เกี่ยวกับเรา</a>
         </nav>
       </aside>
     </div>
@@ -327,8 +243,6 @@
             <p class="absolute top-0 left-0 bg-red-500 text-white p-2">SALE</p>
           </div>
       </div>
-
-
       <!-- section2.3 ระบบจุดระเบิด -->
       <h1 class="text-2xl font-bold text-left mb-4 mt-20 mx-10">ระบบจุดระเบิด</h1>
       <div class="grid grid-cols-4 gap-5 mx-10">
@@ -523,50 +437,18 @@
           <div class="coupon flex gap-2">
             <input id="couponCode" class="flex-1 border rounded px-3 py-2" placeholder="ใส่โค้ดส่วนลด (เช่น MOD10)" />
             <button class="px-3 py-2 rounded bg-red-600 text-white" id="applyCoupon">ใช้โค้ด</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
           <div id="couponMsg" class="text-sm text-gray-600"></div>
-
           <div class="flex justify-between font-semibold">
             <span>ยอดรวมสุทธิ</span>
             <span id="grand">฿0.00</span>
-
-
-
-
-
           </div>
-
           <div class="flex gap-2 pt-2">
             <button class="px-3 py-2 border rounded w-full" id="clearCart">ล้างตะกร้า</button>
             <a class="px-3 py-2 bg-black text-white rounded w-full text-center" id="goCheckout" href="checkout.html">ดำเนินการสั่งซื้อ</a>
-
-
-
-
-
-
           </div>
-
-
         </div>
       </aside>
-
-
     </div>
     <script>
   /* ===== Utils ===== */
@@ -678,40 +560,44 @@
   })();
 
     /* ===== Recommended: สุ่มจาก PRODUCTS จริง ๆ ===== */
-    (function renderRecommended(){
-      // หา container ของ grid (เดิมคุณมีหลายการ์ดฮาร์ดโค้ด — เราจะแทนที่ด้วยข้อมูลจริง)
-      const container = document.querySelector('section.relative.-top-10 .bg-white.rounded-lg.shadow-lg.grid');
+        (function renderRecommended(){
+      const container = document.getElementById('recGrid');
       if (!container || !Array.isArray(PRODUCTS)) return;
 
-      // เลือกสินค้าแบบสุ่ม 4 ชิ้น (ถ้าของจริงน้อยกว่า 4 ก็แสดงเท่าที่มี)
       const shuffled = [...PRODUCTS].sort(()=>Math.random()-0.5).slice(0,4);
-      container.innerHTML = ''; // ลบการ์ดเดิม
+      container.innerHTML = '';
 
       shuffled.forEach(p=>{
-        // ราคาโชว์: ถ้ามี variants ใช้ราคาของ 'single' เป็นค่าเริ่มต้น
+        // ราคาเริ่มต้น
         let price = p.price || 0;
         if (Array.isArray(p.variants) && p.variants.length){
           const v = p.variants.find(v=>v.id==='single') || p.variants[0];
           price = v.price;
         }
-        // รูปโชว์บนการ์ด
+        // รูปหลักของการ์ด
         const imgSrc = p.hero || (Array.isArray(p.gallery)&&p.gallery[0]) || (Array.isArray(p.variants)&&p.variants[0]?.img) || '';
 
-        const card = el('div',{class:'relative flex flex-col items-center bg-white h-[300px] p-2 border rounded shadow'},
-          el('img',{src:imgSrc, alt:p.name, class:'w-full h-[120px] object-contain hover:scale-110 duration-300'}),
-          el('h1',{class:'text-sm font-bold text-center mt-2', text:p.name}),
-          el('div',{class:'text-gray-700'}, baht(price)),
-          (()=>{ const b=el('button',{class:'w-28 h-10 bg-black text-white rounded-sm hover:bg-white hover:text-black border border-black transition mt-2'},'Order Now');
-                b.onclick = ()=> addToCart(p.id, (Array.isArray(p.variants)&&p.variants.length)?'single':'single', 1);
-                return b;})(),
+        // การ์ด (ไม่มีปุ่ม)
+        const card = el('div',{class:'relative flex flex-col items-center bg-white p-3 border rounded shadow'},
+          el('img',{src:imgSrc, alt:p.name, class:'w-full h-56 sm:h-64 lg:h-72 object-contain hover:scale-105 duration-300'}),  // ✅ รูปใหญ่ขึ้น
+          el('h1',{class:'text-sm font-bold text-center mt-3 min-h-[40px]', text:p.name}),
+          el('div',{class:'text-gray-700 mt-1 font-semibold'}, baht(price)),
           el('p',{class:'absolute left-0 top-0 bg-red-500 text-white px-2 py-1 text-xs rounded-br', text:'Recommend!'})
         );
-        container.append(card);
+
+        // ปุ่ม “นอกการ์ด”
+        const btn = el('button',{
+          class:'mt-3 w-full max-w-[240px] h-11 bg-black text-white rounded hover:bg-white hover:text-black border border-black transition'
+        }, 'Order Now');
+        btn.onclick = ()=> addToCart(p.id, (Array.isArray(p.variants)&&p.variants.length)?'single':'single', 1);
+
+        // wrapper รวมการ์ด + ปุ่ม (ปุ่มอยู่นอกกรอบ)
+        const wrapper = el('div',{class:'flex flex-col items-center'}, card, btn);
+
+        container.append(wrapper);
       });
     })();
-
-    // เริ่มต้น
     renderCart();
-  </script>
+    </script>
   </body>
 </html>
