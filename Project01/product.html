@@ -3,40 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modulie Turbo — Shop</title>
+  <title>Modulie Turbo</title>
+
+  <!-- ใส่ style.css เดิมของโปรเจกต์คุณไว้ได้ -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Drawer & Navbar helpers (ถ้ายังไม่มีใน style.css) -->
+  <style>
+    /* ===== Topbar (ให้ข้อความชัด) ===== */
+    .topbar{position:fixed;inset:0 0 auto 0;height:64px;background:#fff;z-index:30;box-shadow:0 4px 16px rgba(0,0,0,.06);}
+    .topbar .wrap{max-width:1120px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;gap:12px;}
+    .brand{display:flex;align-items:center;gap:10px;margin:0 auto;text-decoration:none;color:#111}
+    .brand-logo{height:36px;width:36px;object-fit:contain}
+    .brand-text{font-weight:800}
+    .accent{color:#E11D2E}
+    .chip{border:1px solid #e6e6e6;border-radius:999px;padding:.45rem .8rem;background:#fff;color:#111}
+    .chip.small{padding:.35rem .7rem;font-size:.9rem}
+    .badge{font-size:.75rem;line-height:1.2}
+    .row{display:flex;align-items:center}
+    .grow{flex:1}
+    body{background:#E5E9EF;margin:0;color:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,'Noto Sans Thai',sans-serif}
+    main.wrap{max-width:1120px;margin:0 auto;padding:16px}
+    footer{max-width:1120px;margin:32px auto;padding:16px;color:#666}
+
+    /* ===== Drawer generic ===== */
+    .drawer{position:fixed;inset:0;pointer-events:none;z-index:200}
+    .drawer .mask{position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s}
+    .drawer .panel{
+      position:absolute;top:0;width:320px;max-width:90vw;height:100%;
+      background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);
+      transition:all .25s;display:flex;flex-direction:column
+    }
+    .drawer.open{pointer-events:auto}
+    .drawer.open .mask{opacity:1}
+    .panel-head{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #eee}
+    .panel-head h3{margin:0;font-weight:800}
+    .btn.tiny.ghost{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.25rem .6rem;cursor:pointer}
+
+    /* เมนูซ้าย */
+    #menuDrawer .panel{left:-320px}
+    #menuDrawer.open .panel{left:0}
+    .menu-list a{border:1px solid #eee;border-radius:10px;padding:.6rem .9rem;text-decoration:none;color:#111}
+    .menu-list a:hover{border-color:#E11D2E;background:#fff5f6}
+
+    /* ตะกร้าขวา */
+    #drawer .panel{right:-380px;left:auto;width:360px;box-shadow:-4px 0 20px rgba(0,0,0,.2)}
+    #drawer.open .panel{right:0}
+    .cart-list{padding:12px;display:flex;flex-direction:column;gap:10px}
+    .cart-footer{border-top:1px solid #eee;padding:12px}
+    .cart-footer .coupon{display:flex;gap:8px}
+    .cart-footer input{flex:1;border:1px solid #ddd;border-radius:8px;padding:.55rem .7rem}
+    .cart-footer .apply{border-radius:8px;background:#E11D2E;color:#fff;border:0;padding:.55rem .8rem;cursor:pointer}
+    .cart-footer .total{display:flex;justify-content:space-between;font-weight:700;margin-top:8px}
+    .checkout{display:block;margin-top:10px;background:#111;color:#fff;text-align:center;border-radius:10px;padding:.7rem 1rem;text-decoration:none}
+  </style>
 </head>
 <body>
-  <header class="topbar glass">
+
+  <!-- ===== NAVBAR (ซ้ายเมนู / กลางแบรนด์ / ขวาตะกร้า) ===== -->
+  <header class="topbar">
     <div class="wrap row">
-      <a href="product.html" class="brand" style="text-decoration:none">
+      <button id="openMenu" class="chip small" style="display:flex;gap:.5rem;align-items:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>MENU</span>
+      </button>
+
+      <a href="index.html" class="brand">
         <img class="brand-logo" src="assets/logo.png" alt="Modulie Turbo logo">
         <div class="brand-text">Modulie <span class="accent">Turbo</span></div>
       </a>
-      <nav class="nav">
-        <a class="chip small active" href="index.html">หน้าแรก</a>
-        <a class="chip small" href="history.html">ประวัติการสั่งซื้อ</a>
-      </nav>
-      <div class="grow"></div>
-      <button class="cart-btn" id="openCart">
-        ตะกร้า <span class="cart-count" id="cartCount">0</span>
+
+      <button id="openCart" class="chip small" style="display:flex;gap:.5rem;align-items:center;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6h14l-1.5 9h-11L6 6Z" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/></svg>
+        <span>ตะกร้า</span>
+        <span id="cartCount" class="badge">0</span>
       </button>
     </div>
   </header>
+  <div style="height:64px"></div> <!-- กันหัวทับเนื้อหา -->
 
+  <!-- ====== PAGE CONTENT HERE ====== -->
   <main class="wrap">
     <section class="hero">
       <div class="hero-content">
         <h1>Modulie Turbo</h1>
-        <p>ปลั๊กหัวเทียนแท้คุณภาพ เทอร์โบรถยนต์ อ่างน้ำมันเกียร์ราคาถูก</p>
+        <p>ปลั๊กหัวเทียนแท้คุณภาพ เทอร์โบรถยนต์ ท่อไอเสีย อ่างน้ำมันเกียร์ราคาถูก</p>
         <div class="chips" id="chips"></div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>สินค้าแนะนำ</h2>
-        <a class="chip small" href="history.html">ดูประวัติการสั่งซื้อ</a>
       </div>
       <div class="grid" id="grid"></div>
     </section>
@@ -101,8 +158,93 @@
     </aside>
   </div>
 
+  <!-- ===== MENU DRAWER (left) ===== -->
+  <div class="drawer" id="menuDrawer" aria-hidden="true">
+    <div class="mask" id="menuMask"></div>
+    <aside class="panel">
+      <div class="panel-head">
+        <h3>เมนู</h3>
+        <button class="btn tiny ghost" id="closeMenu">✕</button>
+      </div>
+      <nav class="menu-list" style="padding:12px;display:flex;flex-direction:column;gap:10px">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html">สินค้าทั้งหมด</a>
+        <a href="history.html">ประวัติการสั่งซื้อ</a>
+        <a href="aboutus.html">เกี่ยวกับเรา</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ===== CART DRAWER (right) — ใช้ร่วมตะกร้าเดิม ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="mask" id="mask"></div>
+    <aside class="panel">
+      <div class="panel-head">
+        <h3>ตะกร้าสินค้า</h3>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn tiny ghost" id="clearCart">ล้างตะกร้า</button>
+          <button class="btn tiny ghost" id="closeCart">✕</button>
+        </div>
+      </div>
+      <div class="cart-list" id="cartList"></div>
+      <div class="cart-footer">
+        <div class="coupon">
+          <input id="couponCode" placeholder="ใส่โค้ดส่วนลด (เช่น MOD10)" />
+          <button class="apply" id="applyCoupon">ใช้โค้ด</button>
+        </div>
+        <div id="couponMsg" class="muted" style="margin-top:4px;color:#666"></div>
+        <div class="total"><span>ยอดรวมสุทธิ</span><span id="grand">฿0.00</span></div>
+        <a class="checkout" id="goCheckout" href="checkout.html">ดำเนินการสั่งซื้อ</a>
+      </div>
+    </aside>
+  </div>
+
   <footer>© <span id="yy"></span> Modulie Turbo</footer>
+
+  <!-- ====== ของเดิมที่คุณมี (สินค้า/ตะกร้า) ให้คงไว้ ====== -->
   <script src="products.js"></script>
   <script src="script.js"></script>
+
+  <!-- ====== Navbar + Drawer glue (เปิด/ปิด และอัปเดตจำนวน) ====== -->
+  <script>
+    // ปีใน footer
+    document.getElementById('yy').textContent = new Date().getFullYear();
+
+    // ===== เมนูซ้าย =====
+    (function(){
+      const drawer = document.getElementById('menuDrawer');
+      const openBtn = document.getElementById('openMenu');
+      const closeBtn = document.getElementById('closeMenu');
+      const mask = document.getElementById('menuMask');
+      const open = ()=>{ drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); };
+      const close = ()=>{ drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); };
+      openBtn?.addEventListener('click', open);
+      closeBtn?.addEventListener('click', close);
+      mask?.addEventListener('click', close);
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+    })();
+
+    // ===== ตะกร้าขวา =====
+    (function(){
+      const drawer = document.getElementById('drawer');
+      const openBtn = document.getElementById('openCart');
+      const closeBtn = document.getElementById('closeCart');
+      const mask = document.getElementById('mask');
+      openBtn?.addEventListener('click', ()=> drawer?.classList.add('open'));
+      closeBtn?.addEventListener('click', ()=> drawer?.classList.remove('open'));
+      mask?.addEventListener('click', ()=> drawer?.classList.remove('open'));
+    })();
+
+    // ===== ป้ายจำนวนในปุ่มตะกร้า (อ่านจาก key เดิม) =====
+    (function updateCartBadge(){
+      try{
+        const arr = JSON.parse(localStorage.getItem('cart.modulie') || '[]');
+        const n = arr.reduce((s,i)=> s + (i.qty||0), 0);
+        const b = document.getElementById('cartCount');
+        if (b) b.textContent = n;
+      }catch{}
+      // เมื่อคุณเรียก renderCart() ใน script.js ให้ใส่โค้ดอัปเดต badge ตรงนั้นด้วยจะดีที่สุด
+    })();
+  </script>
 </body>
 </html>
