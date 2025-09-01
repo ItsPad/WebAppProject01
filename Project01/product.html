@@ -5,51 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Modulie Turbo</title>
 
-  <!-- ใช้สไตล์หลักของโปรเจกต์ -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Tailwind (ให้ฟุตเตอร์/เลย์เอาต์เหมือนหน้าอื่น) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- สไตล์หลักของโปรเจกต์ -->
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Drawer & Navbar helpers (ถ้า style.css ไม่มี) -->
+  <!-- สไตล์เสริมเฉพาะ Navbar/Drawer ให้ข้อความชัดและใช้งานลื่น -->
   <style>
     /* ===== Topbar ===== */
-    .topbar{position:fixed;inset:0 0 auto 0;height:64px;background:#fff;z-index:30;box-shadow:0 4px 16px rgba(0,0,0,.06);}
-    .topbar .wrap{max-width:1120px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;gap:12px;}
+    .topbar{position:fixed;inset:0 0 auto 0;height:64px;background:#fff;z-index:30;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+    .topbar .wrap{max-width:1120px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;margin:0 auto;text-decoration:none;color:#111}
     .brand-logo{height:36px;width:36px;object-fit:contain}
     .brand-text{font-weight:800}
     .accent{color:#E11D2E}
-    .chip{border:1px solid #e6e6e6;border-radius:999px;padding:.45rem .8rem;background:#fff;color:#111}
+    .chip{border:1px solid #e6e6e6;border-radius:999px;padding:.45rem .8rem;background:#fff;color:#111;cursor:pointer}
     .chip.small{padding:.35rem .7rem;font-size:.9rem}
-    .badge{font-size:.75rem;line-height:1.2}
+    .badge{font-size:.75rem;line-height:1.2;background:#111;color:#fff;border-radius:999px;padding:.15rem .4rem}
+
     .row{display:flex;align-items:center}
     .grow{flex:1}
     body{background:#E5E9EF;margin:0;color:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,'Noto Sans Thai',sans-serif}
     main.wrap{max-width:1120px;margin:0 auto;padding:16px}
+    footer{max-width:1120px;margin:32px auto;padding:16px;color:#666}
 
-    /* ===== Drawer generic ===== */
+    /* ===== Generic Drawer ===== */
     .drawer{position:fixed;inset:0;pointer-events:none;z-index:200}
     .drawer .mask{position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s}
+    .drawer .panel{
+      position:absolute;top:0;width:360px;max-width:90vw;height:100%;
+      background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;flex-direction:column;
+      transition:transform .25s ease
+    }
     .drawer.open{pointer-events:auto}
     .drawer.open .mask{opacity:1}
-    .drawer .panel{
-      position:absolute;top:0;width:320px;max-width:90vw;height:100%;
-      background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);
-      transition:all .25s;display:flex;flex-direction:column
-    }
+
     .panel-head{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #eee}
     .panel-head h3{margin:0;font-weight:800}
     .btn.tiny.ghost{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.25rem .6rem;cursor:pointer}
 
     /* เมนูซ้าย */
-    #menuDrawer .panel{left:-320px}
-    #menuDrawer.open .panel{left:0}
+    #menuDrawer .panel{transform:translateX(-100%);left:0}
+    #menuDrawer.open .panel{transform:translateX(0)}
+    .menu-list{padding:12px;display:flex;flex-direction:column;gap:10px}
     .menu-list a{border:1px solid #eee;border-radius:10px;padding:.6rem .9rem;text-decoration:none;color:#111}
     .menu-list a:hover{border-color:#E11D2E;background:#fff5f6}
 
     /* ตะกร้าขวา */
-    #drawer .panel{right:-380px;left:auto;width:360px;box-shadow:-4px 0 20px rgba(0,0,0,.2)}
-    #drawer.open .panel{right:0}
+    #drawer .panel{right:0;left:auto;transform:translateX(100%);box-shadow:-4px 0 20px rgba(0,0,0,.2)}
+    #drawer.open .panel{transform:translateX(0)}
     .cart-list{padding:12px;display:flex;flex-direction:column;gap:10px}
     .cart-footer{border-top:1px solid #eee;padding:12px}
     .cart-footer .coupon{display:flex;gap:8px}
@@ -59,25 +61,27 @@
     .checkout{display:block;margin-top:10px;background:#111;color:#fff;text-align:center;border-radius:10px;padding:.7rem 1rem;text-decoration:none}
   </style>
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
+<body>
 
   <!-- ===== NAVBAR ===== -->
   <header class="topbar">
     <div class="wrap row">
-      <!-- ซ้าย: ปุ่มเมนู -->
-      <button id="openMenu" class="chip small" style="display:flex;gap:.5rem;align-items:center;">
+      <!-- Left: MENU -->
+      <button id="openMenu" class="chip small" style="display:flex;gap:.5rem;align-items:center">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <span>MENU</span>
       </button>
-      <!-- กลาง: โลโก้ -->
+
+      <!-- Center: Brand -->
       <a href="index.html" class="brand">
-        <img class="brand-logo" src="public/modulie_turbo_icon.png" alt="Modulie Turbo logo">
+        <img class="brand-logo" src="public/modulie_turbo_icon.png" alt="Modulie Turbo logo" />
         <div class="brand-text">Modulie <span class="accent">Turbo</span></div>
       </a>
-      <!-- ขวา: ปุ่มตะกร้า -->
-      <button id="openCart" class="chip small" style="display:flex;gap:.5rem;align-items:center;">
+
+      <!-- Right: Cart -->
+      <button id="openCart" class="chip small" style="display:flex;gap:.5rem;align-items:center">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path d="M6 6h14l-1.5 9h-11L6 6Z" stroke="currentColor" stroke-width="2"/>
           <circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/>
@@ -87,14 +91,14 @@
       </button>
     </div>
   </header>
-  <div style="height:64px"></div> <!-- กันหัวทับเนื้อหา -->
+  <div style="height:64px"></div> <!-- กัน header ทับเนื้อหา -->
 
-  <!-- ===== CONTENT (ตัวอย่าง) ===== -->
-  <main class="wrap flex-grow">
+  <!-- ===== PAGE CONTENT ===== -->
+  <main class="wrap">
     <section class="hero">
       <div class="hero-content">
-        <h1 class="text-2xl font-bold">Modulie Turbo</h1>
-        <p class="text-gray-600">ปลั๊กหัวเทียนแท้คุณภาพ เทอร์โบรถยนต์ ท่อไอเสีย อ่างน้ำมันเกียร์ราคาถูก</p>
+        <h1>Modulie Turbo</h1>
+        <p>ปลั๊กหัวเทียนแท้คุณภาพ เทอร์โบรถยนต์ ท่อไอเสีย อ่างน้ำมันเกียร์ราคาถูก</p>
         <div class="chips" id="chips"></div>
       </div>
     </section>
@@ -105,7 +109,44 @@
     </section>
   </main>
 
-  <!-- ===== MENU DRAWER (LEFT) ===== -->
+  <!-- ===== PRODUCT DETAIL DIALOG (ใช้งานร่วมกับ script.js) ===== -->
+  <dialog id="detail">
+    <form method="dialog" class="dialog-form">
+      <button class="close-x" aria-label="close">×</button>
+      <div class="modal">
+        <div class="left">
+          <div class="thumb large"><img id="dImg" alt=""></div>
+          <div class="variant-note" id="variantNote"></div>
+        </div>
+        <div class="right">
+          <div class="pill" id="dCat">หมวดหมู่</div>
+          <h3 id="dTitle">ชื่อสินค้า</h3>
+          <p id="dDesc" class="muted">รายละเอียดสินค้าแบบย่อ…</p>
+          <div class="variant">
+            <div class="variant-label">ตัวเลือก:</div>
+            <div class="variant-box" id="dVariants"></div>
+          </div>
+          <div class="price-line">
+            <div class="price" id="dPrice">฿0.00</div>
+            <div class="qty">
+              <label for="dQty">จำนวน</label>
+              <div class="qty-ctrl">
+                <button type="button" id="minus">−</button>
+                <input type="number" id="dQty" min="1" value="1" />
+                <button type="button" id="plus">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn ghost" value="cancel">ยกเลิก</button>
+            <button class="btn primary" id="dAdd" value="default">เพิ่มลงตะกร้า</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== LEFT MENU DRAWER ===== -->
   <div class="drawer" id="menuDrawer" aria-hidden="true">
     <div class="mask" id="menuMask"></div>
     <aside class="panel">
@@ -113,7 +154,7 @@
         <h3>เมนู</h3>
         <button class="btn tiny ghost" id="closeMenu">✕</button>
       </div>
-      <nav class="menu-list" style="padding:12px;display:flex;flex-direction:column;gap:10px">
+      <nav class="menu-list">
         <a href="index.html">หน้าแรก</a>
         <a href="product.html">สินค้าทั้งหมด</a>
         <a href="history.html">ประวัติการสั่งซื้อ</a>
@@ -122,7 +163,7 @@
     </aside>
   </div>
 
-  <!-- ===== CART DRAWER (RIGHT) — มีแค่ชุดเดียว ===== -->
+  <!-- ===== RIGHT CART DRAWER ===== -->
   <div class="drawer" id="drawer" aria-hidden="true">
     <div class="mask" id="mask"></div>
     <aside class="panel">
@@ -146,55 +187,18 @@
     </aside>
   </div>
 
-  <!-- ===== FOOTER (theme เดียวกัน) ===== -->
-  <footer class="bg-gray-900 text-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Company Info -->
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-white">Modulie Turbo</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            ศูนย์รวมอะไหล่และอุปกรณ์แต่งรถคุณภาพสูง
-            ทั้งระบบจุดระเบิด เทอร์โบ ออยล์เพลท
-            เพื่อประสิทธิภาพสูงสุดของรถคุณ
-          </p>
-        </div>
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-bold mb-4 text-white">เมนูด่วน</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="index.html" class="hover:text-red-400">หน้าแรก</a></li>
-            <li><a href="product.html" class="hover:text-red-400">สินค้าทั้งหมด</a></li>
-            <li><a href="history.html" class="hover:text-red-400">ประวัติการสั่งซื้อ</a></li>
-            <li><a href="aboutus.html" class="hover:text-red-400">เกี่ยวกับเรา</a></li>
-          </ul>
-        </div>
-        <!-- Contact -->
-        <div>
-          <h3 class="text-lg font-bold mb-4 text-white">ติดต่อเรา</h3>
-          <p class="text-sm">123 ถนนตัวอย่าง แขวงตัวอย่าง เขตตัวอย่าง กรุงเทพฯ 10100</p>
-          <p class="text-sm">โทร: 02-123-4567</p>
-          <p class="text-sm">
-            อีเมล: <a href="mailto:info@modulieturbo.com" class="hover:text-red-400">info@modulieturbo.com</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="bg-gray-800 text-gray-400 text-center py-3 text-sm">
-      © <span id="yy"></span> Modulie Turbo — All rights reserved.
-    </div>
-  </footer>
+  <footer>© <span id="yy"></span> Modulie Turbo</footer>
 
-  <!-- ===== ของเดิม (สินค้า/ตะกร้า) ===== -->
+  <!-- สคริปต์หลักของโปรเจกต์คุณ -->
   <script src="src/products.js"></script>
   <script src="src/script.js"></script>
 
-  <!-- ===== Navbar + Drawer glue ===== -->
+  <!-- Glue: เปิด/ปิด drawer และ badge ตะกร้า -->
   <script>
     // ปีใน footer
     document.getElementById('yy').textContent = new Date().getFullYear();
 
-    // เมนูซ้าย
+    // ===== เมนูซ้าย =====
     (function(){
       const drawer = document.getElementById('menuDrawer');
       const openBtn = document.getElementById('openMenu');
@@ -208,7 +212,7 @@
       document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
     })();
 
-    // ตะกร้าขวา
+    // ===== ตะกร้าขวา =====
     (function(){
       const drawer = document.getElementById('drawer');
       const openBtn = document.getElementById('openCart');
@@ -219,16 +223,21 @@
       mask?.addEventListener('click', ()=> drawer?.classList.remove('open'));
     })();
 
-    // ป้ายจำนวนในปุ่มตะกร้า (อ่านจาก key เดิม)
-    (function updateCartBadge(){
+    // ===== ป้ายจำนวนในปุ่มตะกร้า =====
+    function updateCartBadge(){
       try{
         const arr = JSON.parse(localStorage.getItem('cart.modulie') || '[]');
         const n = arr.reduce((s,i)=> s + (i.qty||0), 0);
         const b = document.getElementById('cartCount');
         if (b) b.textContent = n;
       }catch{}
-      // แนะนำ: ใส่โค้ดนี้ใน renderCart() ของ src/script.js ด้วย เพื่อ sync อัตโนมัติทุกครั้งที่มีการแก้ตะกร้า
-    })();
+    }
+    updateCartBadge();
+    window.addEventListener('storage', e=>{
+      if (e.key === 'cart.modulie') updateCartBadge();
+    });
+    // ถ้าใน src/script.js มีฟังก์ชัน renderCart() ให้เรียก updateCartBadge() ตอนท้ายด้วยเพื่อ sync ภายในหน้า
   </script>
 </body>
 </html>
+
